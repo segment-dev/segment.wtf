@@ -1,0 +1,3 @@
+# Segment Protocol
+
+TODO

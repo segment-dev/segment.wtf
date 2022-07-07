@@ -5,42 +5,11 @@ slug: /
 
 # Introduction
 
-## Why Segment
+## What Is Segment?
+Segment is a *simple* and *fast* in-memory database written in [Rust](https://www.rust-lang.org/). It has a key-value data model which means that you can store key-value data in it. It is meant to store ephemeral data (caches etc.) and should not be used as a primary database.
 
-Get started by **creating a new site**.
+## Why Segment?
+Segment has the concept of *keyspaces*, which means that related keys can be stored together, think of keyspaces as tables in a traditional relational database. Keyspaces are dynamic which means that you can create as many as you like. Segment goes one step further by allowing you to configure keyspaces individually, for example let's say you have 2 keyspaces `a` and `b` you can set separate eviction policies for them, this providies a lot of flexibility to the developer, you can have one keyspace have an LRU policy while the others can have no eviction at all.
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
-
-### What you'll need
-
-- [Node.js](https://nodejs.org/en/download/) version 14 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
-
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+## Interested?
+If this seems intersting, you can checkout the [getting started ](getting-started/installation) guide to install segment and play with it. Be mindful that Segment is in it's very early stages and can have issues and is not yet production ready at all.
