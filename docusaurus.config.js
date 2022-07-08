@@ -103,6 +103,10 @@ const config = {
                 label: "GitHub",
                 href: "https://github.com/segment-dev/segment",
               },
+              {
+                label: "Twitter",
+                href: "https://twitter.com/segment_dev",
+              },
             ],
           },
         ],
