@@ -1,8 +1,7 @@
 # Command Reference
 
 ## `CREATE`
-The `CREATE` commnd is used to create a new keyspace. It accepts two optional arguments, namely `EV` and `SS`.
-Here `EV` is the evictor, if you dont pass anything, by default `NOOP` evictor is chosen. `SS` is the sample size used by the evictor to determine which key to evict, it's use case is pretty advanced and can be left as defualt we will cover it in more depth later.
+The `CREATE` commnd is used to create a new keyspace. It accepts one optional argument `EV`. Here `EV` is the evictor, if you dont pass anything, by default `NOOP` evictor is chosen.
 
 The `CREATE` command is idempotent, meaning that you can call the same command n-number of times and it will produce the same result.
 
@@ -71,4 +70,19 @@ If the command is malformed in any way, an error is returned.
 Delete the key `foo` in keyspace `tokens`.
 ```bash
 DEL tokens foo
+```
+
+## `DROP`
+The `DROP` command is used to delete a keyspace.
+
+### Return Type
+The return type of the `DROP` command is an integer. It returns `1` if the keyspace was deleted and `0` if it was not because it didn't exist.
+
+If the command is malformed in any way, an error is returned.
+
+### Examples
+
+Delete the keyspace `tokens`.
+```bash
+DROP tokens
 ```

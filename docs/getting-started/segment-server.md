@@ -5,35 +5,27 @@ sidebar_position: 2
 # Segment Server
 The `segment-server` binary starts the Segment server. By default it runs on port `7890` but that can be changed by providing command line flags or by changing the server port in `segment.conf.json`.
 
-## The Config File
-`segment-server` comes with `segment.conf.json` which has the following structure.
-
-```json
-{
-  "port": 7890,
-  "max_memory": 1024
-}
-```
-
-- `port` is the server port.
-- `max_memory` is the max memory server is able to use in **megabytes**.
-
 ## Command Line Flags
 
-You can specify the location of the config file if it's not in the same directory as the binary by passing the `--config` flag.
-```bash
-segment-server --config=/path/to/segment.conf.json
-```
-
-You can override the server port in `segment.conf.json` by passing the `--port` flag.
+You can override the default server port by passing the `--port` flag.
 ```bash
 segment-server --port=6969
 ```
 
-You can also override `max_memory` in `segment.conf.json` by passing the `--max_memory` flag.
+You can override the max memory the server can take by passing the `--max-memory` flag.
 ```bash
-segment-server --max_memory=4096
+segment-server --max-memory=4096
 ```
+
+**Note**: the `max-memory` is specified in **megabytes**.
+
+You can start the server in debug mode by passing by passing the `--debug` flag.
+```bash
+segment-server --debug
+```
+
+
+
 
 ## Keyspaces
 Segment has keyspaces, which are like tables in a relational database. You can create as many keyspaces as you like. For example let's say you are building an authenication system you can create one keyspace for auth tokens and one for user data and one for some other data, you get the point. Keyspaces should store data of similar type.
